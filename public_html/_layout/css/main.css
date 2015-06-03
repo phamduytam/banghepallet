@@ -1,0 +1,8 @@
+@CHARSET "UTF-8";
+.gioithieu{
+	height: 500px;
+	overflow: auto;
+}
+
+.items img{ width: 100%;}
+#content span.error{ color: red; font-size: 11px; font-style: italic}

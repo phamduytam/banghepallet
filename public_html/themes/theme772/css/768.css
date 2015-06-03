@@ -1,0 +1,267 @@
+/* #Tablet (Portrait) Note: Design for a width of 768px
+================================================== */
+@media only screen and (min-width: 1200px){
+	.footer-bg-mob{ background:url(../img/footer-bg-mob.jpg) repeat-x 0 0;}
+}
+@media only screen and (min-width: 950px) and (max-width: 1199px) {
+#header-inner{ padding-top:148px;}
+.mnf_sup_list li .left_side {
+	width: 327px;
+}
+.products_block ul li > div {
+	float: left;
+	margin-top: -4px;
+	padding: 0;
+	width: 125px;
+}
+#header_logo{
+	top:54px;
+}
+#menu-wrap{ background:#3a4663; top:0; left:0;}
+#search_block_top {}
+#subcategories ul li {
+	width: 160px;
+}
+#subcategories ul li.product_list_4 {
+	margin-right: 0;
+}
+#subcategories ul li.product_list_5 {
+	margin-right: 20px;
+}
+footer .block .list-footer li a {
+	padding-right: 10px;
+}
+table#cart_summary .cart_discount_price .div_cart_quantity_delete a {
+	margin-top: 3px;
+}
+.products_block ul li .reduction {
+	margin-left: 20px;
+	margin-right: 0;
+}
+.bottom_pagination {
+	margin-top: 10px;
+}
+#layered_form div div ul {
+	position: relative;
+}
+#layered_form .select {
+	width: 220px;
+	height: 32px;
+	left: 0!important;
+	top: 15px!important;
+}
+.order_delivery .address.first_item, ul#address_delivery {
+	width: 41%;
+}
+.order_delivery .address.alternate_item, ul#address_invoice {
+	width: 42%;
+}
+.addresses #id_address_delivery {
+	width: 329px;
+}
+}
+@media only screen and (min-width: 768px) and (max-width: 979px) {
+#contact_block p.tel{ margin-left:10px;}
+.main-mobile-menu {
+	display: block;
+	margin-left: 20px;
+	margin-top: -44px;
+}
+
+.hotline{
+	overflow: hidden;
+	text-align: right;
+	font-weight: bold;
+	padding-bottom: 10px;
+	margin-top: -34px;
+}
+#header-inner{ padding-top:148px;}
+#header_logo{
+	top:54px;
+}
+#menu-wrap{ background:#3a4663; top:0; left:0;}
+#search_block_top input.search_query {
+	width: 180px;
+}
+#search_block_top {}
+#header {
+	padding: 0 0 20px;
+}
+#header_user #shopping_cart .ajax_cart_product_txt, #header_user #shopping_cart .ajax_cart_product_txt_s {
+	display: none!important;
+}
+/* ************************************************************************************************
+			  CATEGORY PAGE
+			************************************************************************************************ */
+.product_sort {
+	margin-right: 20px;
+}
+.product_sort form {
+	margin: 0;
+}
+.bottom_pagination {
+	margin-top: 10px;
+}
+#subcategories {
+	margin-bottom: 0px;
+}
+#subcategories ul li {
+	width: 119px;
+}
+#subcategories ul li.product_list_6 {
+	margin-right: 10px;
+}
+#subcategories ul li.product_list_4 {
+	margin-right: 0;
+}
+ #product_comparison . footable-row-detail-inner div strong {
+font-size:30px;
+}
+.instant .grid li h3 {
+	min-height: 54px;
+}
+.grid li h3 {
+	min-height: 54px;
+}
+#product_comparison .product_image_div a img {
+	width: 70px;
+}
+#product_comparison .product_image_div span {
+	width: 30px;
+}
+#product_comparison th {
+	white-space: normal;
+	padding: 5px;
+	text-align: center;
+}
+#ul_layered_price_0 span, .layered_weight > ul.store_list_filter > li span {
+	margin: 5px 19px 19px 0;
+	min-width: 30px;
+}
+.products_block ul li .reduction {
+	margin-left: 0;
+	margin-right: 0;
+}
+#layered_form div div ul {
+	position: relative;
+}
+#layered_form .select {
+	width: 166px;
+	height: 32px;
+	left: 0!important;
+	top: 15px!important;
+}
+#cluetip {
+	left: 50% !important;
+	margin-left: -225px;
+}
+/* ************************************************************************************************
+			  BOX COLUMN
+			************************************************************************************************ */
+.products_block ul li > div {
+	width: 94px;
+}
+.products_block ul li a.products_block_img {
+	width: 60px;
+}
+/* ************************************************************************************************
+			 CONTACT FORM
+			************************************************************************************************ */
+#contact_form textarea#message {
+	height: 200px;
+	width: 534px;
+}
+#contact_form p.submit {
+	padding-top: 20px;
+}
+#contact_form p {
+	padding-top: 7px;
+	padding-left: 0;
+}
+#contact_form p.upload-file {
+	display: none;
+}
+#contact_form .text input, #contact_form .password input {
+	width: 100%;
+}
+#contact_form select {
+	width: 100%;
+}
+#contact_form .select select {
+	width: 100%;
+}
+/* ************************************************************************************************
+			 MANUFACTURE
+			************************************************************************************************ */
+.mnf_sup_list li .left_side {
+	float: none;
+	padding: 0 0 0 0px;
+	width: 100%;
+	border: none;
+}
+.mnf_sup_list li .right_side {
+	float: none;
+	border: none;
+	height: auto;
+	min-height: auto;
+	padding-left: 0;
+}
+.mnf_sup_list li .des-small {
+	display: none;
+}
+.mnf_sup_list li .logo {
+	margin-right: 20px;
+}
+.mnf_sup_list li .logo img {
+	margin-top: 0;
+}
+.mnf_sup_list li .left_side h3 a {
+	margin-top: -3px;
+}
+.mnf_sup_list li .left_side h3 {
+	margin-top: 13px;
+}
+/* ************************************************************************************************
+			 ORDER
+			************************************************************************************************ */
+footer .block h4 {
+	margin-top: 14px;
+}
+table#cart_summary td.tdfirst {
+	width: 83%;
+}
+#order-list .history_detail .color-myaccount {
+	display: block;
+}
+.list-order-step li {
+	height: 250px;
+}
+.list-order-step .img-order {
+	margin-bottom: 55px;
+}
+.multishipping-cart .cart_ref {
+	padding: 5px!important;
+}
+table.multishipping-cart td {
+	padding: 5px !important;
+}
+.order_delivery .address.first_item, ul#address_delivery {
+	width: 39%;
+}
+.order_delivery .address.alternate_item, ul#address_invoice {
+	width: 39%;
+}
+.addresses #id_address_delivery {
+	width: 100%;
+}
+}
+@media only screen and (min-width: 768px) {
+.top_up {
+	margin-top: -57px;
+}
+.footer-bg-mob .block ul.toggle_content {
+	display: block !important;
+	height: 100% !important;
+	opacity: 1 !important
+}
+}
