@@ -25,7 +25,7 @@
 }
 .desktop #menu-custom li {
 	float: left;
-	margin:0 15px 0 17px;
+	margin:0 15px 0 6px;
 	position: relative;
 }
 .desktop #menu-custom > li:first-child > a {
