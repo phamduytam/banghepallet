@@ -1,7 +1,25 @@
 /* #Tablet (Portrait) Note: Design for a width of 768px
 ================================================== */
 @media only screen and (min-width: 1200px){
-	.footer-bg-mob{ background:url(../img/footer-bg-mob.jpg) repeat-x 0 0;}
+	.footer-bg-mob{ }
+	
+	.copyright{
+		background:#2E394F;
+		height: 50px;
+		line-height: 50px;
+		color: #ffffff;
+		font-size: 13px;
+		font-weight: 400;
+		width: 100%;
+		
+	}
+	.copyright a{
+		color: #fff;
+	}
+	
+	.copyright a:hover, .copyright a:active{
+		color: #8aa3c2;
+	}
 }
 @media only screen and (min-width: 950px) and (max-width: 1199px) {
 #header-inner{ padding-top:148px;}

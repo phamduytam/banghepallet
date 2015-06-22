@@ -265,10 +265,7 @@
 							</ul>
 						</section>
 						<?php endif;?>
-						<section class="bottom_footer">
-							&copy; 2015 Powered by <a target="_blank"
-								href="http://www.banghepallet.vn">BanghePallet</a>
-						</section>
+						
 						<?php
 							$khachhang = $this->getKhachhang();
 							if($khachhang):
@@ -335,6 +332,14 @@
 						<?php endif;?>
 					</div>
 				</footer>
+			</div>
+			<div class="copyright">
+				<div class="container">
+					<section>
+						&copy; 2015 Powered by <a target="_blank"
+							href="http://www.banghepallet.vn">BanghePallet</a>
+					</section>
+				</div>
 			</div>
 		</div>
 	</div>
