@@ -190,4 +190,21 @@ class Controller extends CController
 			return $product;
 		return false;
 	}
+	
+	public function getMenu() {
+		$html = '';
+		$model = new Menu2AR();
+		$menu = $model->findAllList();
+		if(count($menu) == 0)
+			return $html;
+		$menu1 = getACol($menu, 'menu1');
+		$html.= '<li><a href="#">'.$menu1['name'].'</a>';
+		$html.= '<ul id="menu-custom">';
+		foreach ($menu as $v){
+			$html.= '<li><a href="'.$v['link'].'">'.$v['name'].'</a></li>';
+		}
+		$html.= '</ul>';
+		$html.= '</li>';
+		return $html;
+	}
 }

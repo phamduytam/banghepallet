@@ -13,19 +13,23 @@
 	?>
 <?php
 	$form = $this->beginWidget('TbActiveForm', array(
-		'action'=>sslUrl('category1/add'),
+		'action'=>sslUrl('menu2/add'),
 		'id' => 'add-form',
 		'htmlOptions'=>array('enctype' => 'multipart/form-data')
 	));
 ?>
 
 <div class="form-group">
-			<?php echo $form->labelEx($model,'parent_id'); ?>
-			<?php echo $form->dropDownList($model,'parent_id',array('0'=>'Chọn nếu là danh mục cấp 1') + CHtml::listData($category, 'id', 'name'), array('class' => 'form-control')); ?>
+			<?php echo $form->labelEx($model,'menu_id'); ?>
+			<?php echo $form->dropDownList($model,'menu_id', CHtml::listData($menu1, 'id', 'name'), array('class' => 'form-control')); ?>
 </div>
 <div class="form-group">
 	<?php echo $form->labelEx($model,'name'); ?>
 	<?php echo $form->textField($model,'name', array('class' => 'form-control', 'placeholder' => 'Vui lòng nhập tiêu đề')); ?>
+</div>
+<div class="form-group">
+	<?php echo $form->labelEx($model,'link'); ?>
+	<?php echo $form->textField($model,'link', array('class' => 'form-control', 'placeholder' => 'Vui lòng nhập link')); ?>
 </div>
 
 <div class="form-group">

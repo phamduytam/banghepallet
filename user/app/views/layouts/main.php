@@ -132,7 +132,7 @@
 						<ul id="header_links">
 							<li <?php echo $this->id == 'site' ? 'class="header_active"' : ''?>><a href="<?php echo app()->baseUrl;?>/">Trang chủ</a></li>
 							<li <?php echo $this->id == 'product' ? 'class="header_active"' : ''?>><a href="<?php echo url('san-pham.html')?>">Sản phẩm</a></li>
-							<li <?php echo $this->id == 'tintuc' ? 'class="header_active"' : ''?>><a href="<?php echo url('tin-tuc.html')?>">Tin tức</a></li>
+							<!-- <li <?php echo $this->id == 'tintuc' ? 'class="header_active"' : ''?>><a href="<?php echo url('tin-tuc.html')?>">Tin tức</a></li>-->
 							<li <?php echo $this->id == 'khachhang' ? 'class="header_active"' : ''?>><a href="<?php echo url('khach-hang.html')?>">Khách hàng</a></li>
 							<li <?php echo $this->id == 'contact' ? 'class="header_active"' : ''?>><a href="<?php echo url('lien-he.html')?>">Liên hệ</a></li>
 						</ul>
@@ -144,7 +144,7 @@
 							<ul id="mobilelink" class="list_header">
 								<li <?php echo $this->id == 'site' ? 'class="header_active"' : ''?>><a href="<?php echo app()->baseUrl;?>/">Trang chủ</a></li>
 								<li <?php echo $this->id == 'product' ? 'class="header_active"' : ''?>><a href="<?php echo url('san-pham.html')?>">Sản phẩm</a></li>
-								<li <?php echo $this->id == 'tintuc' ? 'class="header_active"' : ''?>><a href="<?php echo url('tin-tuc.html')?>">Tin tức</a></li>
+								<!-- <li <?php echo $this->id == 'tintuc' ? 'class="header_active"' : ''?>><a href="<?php echo url('tin-tuc.html')?>">Tin tức</a></li> -->
 								<li <?php echo $this->id == 'khachhang' ? 'class="header_active"' : ''?>><a href="<?php echo url('khach-hang.html')?>">Khách hàng</a></li>
 								<li <?php echo $this->id == 'contact' ? 'class="header_active"' : ''?>><a href="<?php echo url('lien-he.html')?>">Liên hệ</a></li>
 							</ul>
@@ -180,6 +180,7 @@
 								<?php endif;?>
 							</li>
 							<?php endforeach;?>
+							<?php echo $this->getMenu()?>
 						</ul>
 					<?php endif;?>
 					</div>
