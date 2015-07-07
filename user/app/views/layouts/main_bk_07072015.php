@@ -159,12 +159,30 @@
 						<div id="menu-trigger">
 							Categories<i class="menu-icon icon-plus-sign-alt"></i>
 						</div>
-						
+						<?php
+							$category = $this->getCategory();
+							if($category):
+						?>
 						<ul id="menu-custom">
-							
+							<?php
+								foreach ($category as $v):
+							?>
+							<li><a href="<?php echo app()->baseUrl;?>/san-pham/<?php echo $v->alias?>.html"><?php echo $v->name?></a>
+								<?php
+									$category1 = $this->getCategory1($v->id);
+									if($category1):
+								?>
+								<ul class="cate2">
+									<?php foreach ($category1 as $v1):?>
+									<li><a href="<?php echo app()->baseUrl;?>/san-pham/<?php echo $v->alias?>/<?php echo $v1->alias?>.html"><?php echo $v1->name?></a></li>
+									<?php endforeach;?>
+								</ul>
+								<?php endif;?>
+							</li>
+							<?php endforeach;?>
 							<?php echo $this->getMenu()?>
 						</ul>
-					
+					<?php endif;?>
 					</div>
 				</div>
 				<?php
@@ -235,7 +253,7 @@
 							$tintuc = $this->getTintuc();
 							if($tintuc):
 						?>
-						<section class="block blockcms_footer span3">
+						<section class="block blockcms_footer span2">
 							<h4 class="toggle">
 								Tìm kiếm<i class="icon-plus-sign"></i>
 							</h4>
@@ -248,6 +266,52 @@
 							</ul>
 						</section>
 						<?php endif;?>
+						
+						<?php
+							$khachhang = $this->getKhachhang();
+							if($khachhang):
+						?>
+						<section class="block blockmyaccountfooter span2">
+
+							<h4>
+								Khách hàng<i class="icon-plus-sign"></i>
+							</h4>
+							<ul class="list-footer toggle_content clearfix">
+								<?php foreach($khachhang as $v):?>
+								<li><a href="<?php echo url('/khach-hang/chi-tiet/' . $v->id . '/' . $v->alias.'.html')?>"
+									title="<?php echo $v->name?>" rel="nofollow"><?php echo cutStr($v->name, 80)?></a>
+								</li>
+								<?php endforeach;?>
+							</ul>
+						</section>
+						<?php endif;?>
+						<?php
+							$social = $this->getSocial();
+							if($social):
+						?>
+						<section class="block blocksocial span2">
+							<h4>
+								Follow us<i class="icon-plus-sign"></i>
+							</h4>
+							<ul class="toggle_content">
+								<li class="facebook"><a
+									href="<?php echo html_entity_decode(strip_tags($social['facebook']->content), ENT_QUOTES, 'UTF-8')?>"><i
+										class="icon-facebook"></i><span>Facebook</span>
+								</a>
+								</li>
+								<li class="twitter"><a
+									href="<?php echo html_entity_decode(strip_tags($social['twitter']->content), ENT_QUOTES, 'UTF-8')?>"><i
+										class="icon-twitter"></i><span>Twitter</span>
+								</a>
+								</li>
+								<li class="google-plus"><a
+									href="<?php echo html_entity_decode(strip_tags($social['google']->content), ENT_QUOTES, 'UTF-8')?>"><i
+										class="icon-google-plus"></i><span>Google+</span>
+								</a>
+								</li>
+							</ul>
+						</section>
+						<?php endif;?>
 
 						<?php
 							$contact = $this->getContact();
@@ -255,7 +319,7 @@
 						?>
 						<section class="block blockcontactinfos span4">
 							<h4>
-								Liên hệ <i class="icon-plus-sign"></i>
+								Contact us<i class="icon-plus-sign"></i>
 							</h4>
 							<ul class="toggle_content">
 
@@ -267,24 +331,6 @@
 							</ul>
 						</section>
 						<?php endif;?>
-						
-						<section class="block blocksocial span3">
-							<h4></h4>
-							<div id="fb-root"></div>
-							<script>(function(d, s, id) {
-							  var js, fjs = d.getElementsByTagName(s)[0];
-							  if (d.getElementById(id)) return;
-							  js = d.createElement(s); js.id = id;
-							  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId=201536826668676";
-							  fjs.parentNode.insertBefore(js, fjs);
-							}(document, 'script', 'facebook-jssdk'));</script>
-							<div class="fb-page" data-href="https://www.facebook.com/banghepallet.vn"
-								 data-small-header="false" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true"
-								  data-show-posts="false">
-							<div class="fb-xfbml-parse-ignore">
-								<blockquote cite="https://www.facebook.com/banghepallet.vn">
-								<a href="https://www.facebook.com/banghepallet.vn">Bàn Ghế Pallet</a></blockquote></div></div>
-						</section>
 					</div>
 				</footer>
 			</div>

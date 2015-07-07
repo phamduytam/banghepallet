@@ -115,7 +115,7 @@ class Menu2AR extends BaseAR
 				)
 		);
 		
-		$criteria->order = 't.id DESC';
+		$criteria->order = 't.ordering DESC';
 		return $criteria;
 	}
 

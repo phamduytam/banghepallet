@@ -114,14 +114,17 @@ class StaticAR extends BaseAR
 		return $this->searchList_Ex($criteria, $pageSize, $maxPage);
 	}
 
-	public function getList($limit)
+	public function getList($limit = '')
 	{
 		$criteria = new CDbCriteria();
 		$criteria->select = '*';
 		$criteria->addCondition('t.status = :status')->params[':status'] = 1;
 		$criteria->addCondition('t.selected = :selected')->params[':selected'] = 1;
 		$criteria->order = 'id DESC';
-		$criteria->limit = $limit;
+		if ($limit){
+			$criteria->limit = $limit;	
+		}
+		
 		return $this->findAll($criteria);
 	}
 }

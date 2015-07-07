@@ -133,7 +133,7 @@ class Controller extends CController
 	 */
 	public function getTintuc() {
 		$model = new StaticAR();
-		$tintuc = $model->getList(5);
+		$tintuc = $model->getList();
 		if($tintuc)
 			return $tintuc;
 		return false;
@@ -197,14 +197,14 @@ class Controller extends CController
 		$menu = $model->findAllList();
 		if(count($menu) == 0)
 			return $html;
-		$menu1 = getACol($menu, 'menu1');
-		$html.= '<li><a href="#">'.$menu1['name'].'</a>';
-		$html.= '<ul id="menu-custom">';
+		//$menu1 = getACol($menu, 'menu1');
+		//$html.= '<li><a href="#">'.$menu1['name'].'</a>';
+		//$html.= '<ul id="menu-custom">';
 		foreach ($menu as $v){
 			$html.= '<li><a href="'.$v['link'].'">'.$v['name'].'</a></li>';
 		}
-		$html.= '</ul>';
-		$html.= '</li>';
+		//$html.= '</ul>';
+		//$html.= '</li>';
 		return $html;
 	}
 }
