@@ -44,7 +44,6 @@
 		?>
 	</tbody>
 </table>
-</div>
 <?php
 $pagerCssClass	=	'bs-example';
 $pager			=	array(
@@ -59,6 +58,8 @@ $listView->pagerCssClass = $pagerCssClass;
 $listView->pager = $pager;
 $listView->renderPager();
 ?>
+</div>
+
 <script type="text/javascript">
 	$(document).ready(function(){
 		var url = "<?php echo app()->baseUrl?>";
