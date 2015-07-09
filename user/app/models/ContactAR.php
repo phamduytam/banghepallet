@@ -38,8 +38,9 @@ class ContactAR extends BaseAR
 			// Please remove those attributes that should not be searched.
 			array('user_id, password, name, permission, status', 'safe', 'on'=>'search'),
 			*/
-			array('name, subject, content, email', 'required', 'message' => 'Vui lòng nhập {attribute} '),
+			array('name, subject, content, email, phone', 'required', 'message' => 'Vui lòng nhập {attribute} '),
 			array('email', 'email', 'message' => 'Email không hợp lệ '),
+			array('phone', 'numerical', 'integerOnly' => true),
 			array('created, status', 'safe')
 		);
 	}
@@ -67,6 +68,7 @@ class ContactAR extends BaseAR
 			'status'		=> 'Tình trạng',
 			'created'		=> 'Ngày tạo',
 			'email'			=> 'Email',
+			'phone'			=> 'Điện thoại'
 		);
 	}
 

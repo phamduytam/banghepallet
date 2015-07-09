@@ -22,6 +22,7 @@
 			<th>Subject <i class="fa fa-sort"></i></th>
 			<th>Họ tên <i class="fa fa-sort"></i></th>
 			<th>Email <i class="fa fa-sort"></i></th>
+			<th>Điện thoại <i class="fa fa-sort"></i></th>
 			<th>Trạng thái <i class="fa fa-sort"></i></th>
 			<th>Ngày tạo <i class="fa fa-sort"></i></th>
 			<th>Tuỳ chỉnh </th>

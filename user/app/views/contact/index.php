@@ -26,9 +26,13 @@
 				<?php echo $form->textField($model,'name', array('placeholder' => 'Họ tên', 'class' => 'form-control')); ?>
 				<?php echo $form->error($model,'name'); ?>
 				</div>
+				<div class="form-group col-md-6">
+				<?php echo $form->textField($model,'phone', array('placeholder' => 'Điện thoại', 'class' => 'form-control')); ?>
+				<?php echo $form->error($model,'phone'); ?>
+				</div>
 				<!-- end .span4 -->
 				<div class="form-group col-md-6">
-				<?php echo $form->textField($model,'email', array('placeholder' => 'e-mail', 'class' => 'form-control')); ?>
+				<?php echo $form->textField($model,'email', array('placeholder' => 'E-mail', 'class' => 'form-control')); ?>
 				<?php echo $form->error($model,'email'); ?>
 				</div>
 				<!-- end .span4 -->

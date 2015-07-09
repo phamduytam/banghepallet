@@ -20,6 +20,11 @@
 </div>
 
 <div class="form-group">
+	<?php echo $form->labelEx($model,'phone'); ?>
+	<?php echo $form->textField($model,'phone', array('class' => 'form-control')); ?>
+</div>
+
+<div class="form-group">
 	<?php echo $form->labelEx($model,'subject'); ?>
 	<?php echo $form->textField($model,'subject', array('class' => 'form-control')); ?>
 </div>

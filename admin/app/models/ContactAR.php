@@ -40,7 +40,7 @@ class ContactAR extends BaseAR
 			*/
 			array('name, subject, content', 'required', 'message' => 'Vui lòng nhập {attribute} '),
 			array('email', 'email', 'message' => 'Email không hợp lệ '),
-			array('created, status', 'safe')
+			array('created, status, phone', 'safe')
 		);
 	}
 
@@ -67,6 +67,7 @@ class ContactAR extends BaseAR
 			'status'		=> 'Tình trạng',
 			'created'		=> 'Ngày tạo',
 			'email'			=> 'Email',
+			'phone'			=> 'Điện thoại'
 		);
 	}
 

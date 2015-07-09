@@ -3,6 +3,7 @@
 	<td><?php echo $data->subject;?></td>
 	<td><?php echo $data->name;?></td>
 	<td><?php echo $data->email;?></td>
+	<td><?php echo $data->phone;?></td>
 	<td><?php echo $data->status == 1 ? 'Chưa xem ' : 'Đã xem ';?></td>
 	<td><?php echo date('d-m-Y H:i:s',strtotime($data->created));?></td>
 	<td>
