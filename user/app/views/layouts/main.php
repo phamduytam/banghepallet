@@ -127,7 +127,9 @@
 						href="<?php echo app()->baseUrl;?>/"
 						title="Trang trí gỗ thông Pallet"> <img class="logo"
 						src="<?php echo app()->baseUrl;?>/img/ban-ghe-pallet.jpg" alt="Trang trí gỗ thông Pallet"
-						width="208" height="80" /> </a><?php if($this->id == 'site') echo '<h1 style="top: -2000px; position: absolute;">Bàn ghế Pallet</h1>';?>
+						width="208" height="80" />
+						<h<?php echo $this->id == 'site' ? '1' : '2';?> style="font-size:14px; padding:0; margin:0; border:0; padding-left: 10px; text-align:justify; color:#434e67; font-weight:normal;">Bàn ghế Pallet</h<?php echo $this->id == 'site' ? '1' : '2';?>>
+						 </a>
 					<section class="header-box blockpermanentlinks-header">
 						<ul id="header_links">
 							<li <?php echo $this->id == 'site' ? 'class="header_active"' : ''?>><a href="<?php echo app()->baseUrl;?>/">Trang chủ</a></li>
@@ -265,6 +267,7 @@
 								<li><i class="icon-envelope"></i>Email <a href="mailto:<?php echo html_entity_decode(strip_tags($contact['email']->content), ENT_QUOTES, 'UTF-8')?>"><?php echo html_entity_decode(strip_tags($contact['email']->content), ENT_QUOTES, 'UTF-8')?></a>
 								</li>
 							</ul>
+							<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.038542333803!2d106.64818889999998!3d10.8846731!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174d61ec782b539%3A0x90e599f43d6913cf!2zNTExIEzDqiBWxINuIEtoxrDGoW5nLCBUaOG7m2kgQW4sIFF14bqtbiAxMiwgSOG7kyBDaMOtIE1pbmgsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1436783006382" width="100%" height="220" frameborder="0" style="border:0" allowfullscreen></iframe>
 						</section>
 						<?php endif;?>
 						

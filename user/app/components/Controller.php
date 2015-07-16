@@ -95,6 +95,8 @@ class Controller extends CController
 	public function getTitle()
 	{
 		$title = 'Bàn Ghế Pallet';
+		if($this->id == 'site')
+			return 'Bàn ghế Pallet, Đóng bàn ghế gỗ giá rẻ - 0936.730.730';
 		if(strlen($this->pageTitle) && $this->id != 'site')
 			return $this->pageTitle . ' - ' . $title;
 		else{
