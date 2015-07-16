@@ -130,6 +130,10 @@
 						width="208" height="80" />
 						<h<?php echo $this->id == 'site' ? '1' : '2';?> style="font-size:14px; padding:0; margin:0; border:0; padding-left: 10px; text-align:justify; color:#434e67; font-weight:normal;">Bàn ghế Pallet</h<?php echo $this->id == 'site' ? '1' : '2';?>>
 						 </a>
+						 <div class="hotline">
+							<span class="number">0936 730 730</span>
+							<span class="text">Hotline: </span>
+						</div>
 					<section class="header-box blockpermanentlinks-header">
 						<ul id="header_links">
 							<li <?php echo $this->id == 'site' ? 'class="header_active"' : ''?>><a href="<?php echo app()->baseUrl;?>/">Trang chủ</a></li>
@@ -154,10 +158,7 @@
 					</section>
 					<div id="menu-wrap" class="clearfix desktop">
 						
-						<div class="hotline">
-							<span class="number">0936 730 730</span>
-							<span class="text">Hotline: </span>
-						</div>
+						
 						<div id="menu-trigger">
 							Categories<i class="menu-icon icon-plus-sign-alt"></i>
 						</div>
