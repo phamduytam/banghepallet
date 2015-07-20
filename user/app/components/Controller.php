@@ -34,10 +34,13 @@ class Controller extends CController
 
 	public function init()
 	{
+	
 	}
 
 	protected function beforeAction($action)
 	{
+		if(Yii::app()->errorHandler->error['code'] == 404)
+			$this->redirect("http://".$_SERVER['SERVER_NAME']);
 		if(defined('USE_SSL') && USE_SSL === true && !isSSL() ){
 			if(in_array($this->action->id , $this->sslAction)){
 				$next = sslUrl("{$this->id}/{$this->action->id}" , $_GET);

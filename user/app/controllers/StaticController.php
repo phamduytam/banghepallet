@@ -11,7 +11,7 @@ class StaticController extends Controller
 		$alias = str_replace($search, $replace, $alias);
 		$tintuc = $model->findByAttributes(array('alias' => $alias));
 		if(!$tintuc)
-			return ;
+			throw new CHttpException(404,'The specified post cannot be found.');
 
 		$this->breadcrumbs = array(
 			$tintuc->name => ''

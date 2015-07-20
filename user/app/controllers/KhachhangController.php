@@ -18,7 +18,7 @@ class KhachhangController extends Controller
 		$model = new KhachHangAR();
 		$khachhang = $model->findByPk($id);
 		if(!$khachhang)
-			return ;
+			throw new CHttpException(404,'The specified post cannot be found.');
 
 		$model->id = $id;
 		$ortherList = $model->getListOrther(10);

@@ -128,7 +128,7 @@
 						title="Trang trí gỗ thông Pallet"> <img class="logo"
 						src="<?php echo app()->baseUrl;?>/img/ban-ghe-pallet.jpg" alt="Trang trí gỗ thông Pallet"
 						width="208" height="80" />
-						<h<?php echo $this->id == 'site' ? '1' : '2';?> style="font-size:14px; padding:0; margin:0; border:0; padding-left: 10px; text-align:justify; color:#434e67; font-weight:normal;">Bàn ghế Pallet</h<?php echo $this->id == 'site' ? '1' : '2';?>>
+						<h<?php echo $this->id == 'site' ? '1' : '2';?> style="font-size:14px; padding:0; margin:0; margin-top: -5px; border:0; padding-left: 10px; text-align:justify; color:#434e67; font-weight:normal;">Bàn ghế Pallet</h<?php echo $this->id == 'site' ? '1' : '2';?>>
 						 </a>
 						 <div class="hotline">
 							<span class="number">0936 730 730</span>

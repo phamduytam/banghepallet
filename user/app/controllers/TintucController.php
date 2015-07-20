@@ -18,7 +18,7 @@ class TintucController extends Controller
 		$model = new TinTucAR();
 		$tintuc = $model->findByPk($id);
 		if(!$tintuc)
-			return ;
+			throw new CHttpException(404,'The specified post cannot be found.');
 
 		$model->id = $id;
 		$ortherList = $model->getListOrther(10);

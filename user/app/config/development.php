@@ -3,10 +3,10 @@
 error_reporting(E_ALL);
 define('YII_DEBUG',true);
 define('YII_TRACE_LEVEL',3);
-ini_set('mbstring.internal_encoding' , 'UTF8');
+//ini_set('mbstring.internal_encoding' , 'UTF8');
 
-define('_NOW' , strtotime('2013-12-26 ' . date("H:i:s")));
-//if(!defined('_NOW') ) define('_NOW' , time());
+//define('_NOW' , strtotime('2013-12-26 ' . date("H:i:s")));
+if(!defined('_NOW') ) define('_NOW' , time());
 define('USE_SSL' , false);
 
 function getSetting(){

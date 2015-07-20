@@ -20,7 +20,7 @@ class ProductController extends Controller
 		$model = new ProductAR();
 		$product = $model->findByPk($id);
 		if(!$product)
-			return ;
+			throw new CHttpException(404,'The specified post cannot be found.');
 		$model->id = $id;
 		$ortherList = $model->getListOrther(5);
 		$this->breadcrumbs = array(
