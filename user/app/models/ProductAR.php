@@ -158,4 +158,16 @@ class ProductAR extends BaseAR
 		$arr = array_merge($arr1, $arr2);
 		return $arr;
 	}
+	
+	public function getBanGhe($limit)
+	{
+		$criteria = new CDbCriteria();
+		$criteria->select = '*';
+		if(strlen($this->cat_id) > 0)
+			$criteria->addCondition('t.cat_id = :cat_id')->params[':cat_id'] = $this->cat_id;
+		$criteria->addCondition('t.status = :status')->params[':status'] = 1;
+		$criteria->order = 'id DESC';
+		$criteria->limit = $limit;
+		return $this->findAll($criteria);
+	}
 }

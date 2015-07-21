@@ -21,7 +21,12 @@ class StaticController extends Controller
 			$this->keyword = $tintuc->keyword;
 		if ($tintuc->description != '')
 			$this->description = $tintuc->description;	
-		$this->render('index', compact('tintuc'));
+		
+		// get 6 item of ban ghe pallet
+		$product = new ProductAR();
+		$product->cat_id = 33;
+		$banghe = $product->getBanGhe(6);
+		$this->render('index', compact('tintuc', 'banghe'));
 	}
 
 	public function actionAdd()
