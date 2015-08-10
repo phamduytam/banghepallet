@@ -160,7 +160,7 @@
 						
 						
 						<div id="menu-trigger">
-							Categories<i class="menu-icon icon-plus-sign-alt"></i>
+							Danh mục<i class="menu-icon icon-plus-sign-alt"></i>
 						</div>
 						
 						<ul id="menu-custom">
