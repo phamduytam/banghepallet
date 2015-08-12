@@ -79,8 +79,10 @@ class Controller extends CController
 		if(strlen($this->description))
 			return strip_tags($this->description);
 		else{
-			$description = StaticAR::model()->findByPk(2);
-			return html_entity_decode(strip_tags($description->content), ENT_QUOTES, 'UTF-8');
+			$model = StaticAR::model()->findByPk(2);
+			$title = $this->id == 'site'? 'Bàn ghế Pallet, Đóng bàn ghế gỗ giá rẻ - 0936.730.730' : $this->pageTitle;
+			$description = $title.". ". $model->content;
+			return html_entity_decode(strip_tags($description), ENT_QUOTES, 'UTF-8');
 		}
 	}
 
