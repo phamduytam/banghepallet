@@ -1,10 +1,10 @@
 <div id="content" class="row" style="padding-bottom: 10px;">
-	
-
 	<div class="span9 content-box">
 		<h3 class="title">
 		<?php echo $this->pageTitle;?>
 		</h3>
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.0211556025733!2d106.63949131438561!3d10.88599526013935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174d61b45f12d5d%3A0x2238e82ff520b248!2zQsOgbiBnaOG6vyBQYWxsZXQ!5e0!3m2!1sen!2s!4v1448280211519" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>	
+
 		<div><?php echo $contact->content?></div>
 		<?php
 		$form = $this->beginWidget('TbActiveForm', array(

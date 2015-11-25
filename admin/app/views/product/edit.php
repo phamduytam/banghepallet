@@ -47,6 +47,19 @@ $this->pageTitle = 'Product';
 	<?php echo Chtml::hiddenField('hd_img', $model->image); ?>
 </div>
 
+<div class="form-group" style="overflow: hidden">
+	<?php echo $form->labelEx($model,'tag'); ?><br>
+	<?php if($tags):?>
+		<?php foreach ($tags as $value) {
+			$checked = in_array($value->id, $tags_checked) ? 'checked="checked"' : '';
+			echo '<span class="col-lg-2">
+				<input type="checkbox" name="tagList[]" value="'.$value->id.'"'.$checked.'>
+				 <label> &nbsp'.$value->name.'</label></span>';
+		}
+		?>
+<?php endif;?>
+</div>
+
 <div class="form-group">
 	<?php echo $form->labelEx($model,'content'); ?>
 	<?php echo $form->textArea($model,'content', array('class' => 'form-control')); ?>

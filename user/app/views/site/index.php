@@ -2,7 +2,7 @@
 
 <div class="row ">
 	<div class="loader_page">
-		<div id="center_column" class="center_column span12 clearfix">
+		<div id="center_column" class="center_column span9 clearfix">
 
 			<section id="addhomefeatured" class="main_page_products block">
 				<h4>

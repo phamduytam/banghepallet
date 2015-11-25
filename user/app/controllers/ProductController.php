@@ -21,8 +21,12 @@ class ProductController extends Controller
 		$product = $model->findByPk($id);
 		if(!$product)
 			throw new CHttpException(404,'The specified post cannot be found.');
+
+		// san pham lien quan
 		$model->id = $id;
-		$ortherList = $model->getListOrther(5);
+		$model->cat_id = $product->cat_id;
+		$lienquan = $model->getListOrther(3);		
+
 		$this->breadcrumbs = array(
 			'Sản phẩm' => url('san-pham.html'),
 			$product->name => ''
@@ -30,7 +34,16 @@ class ProductController extends Controller
 		$this->pageTitle = $product->name;
 		$this->description = $product->description;
 		$this->fbImage = $product->image;
-		$this->render('detail', compact('product', 'ortherList'));
+
+		// tag detail bottom
+		$model_tag = new TagAR();
+		if($product->tag_id != "")
+			$model_tag->tagList = $product->tag_id;
+		else
+			$model_tag->tagList = "all";
+		$tag_pro = $model_tag->findAllListTag();
+
+		$this->render('detail', compact('product', 'lienquan', 'tag_pro'));
 	}
 
 	public function actionCategory($alias, $alias1 = '') {

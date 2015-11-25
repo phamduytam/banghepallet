@@ -28,7 +28,18 @@
 		<div id="center_column" class="center_column span9 clearfix">
 			<?php echo $content; ?>
 		</div>
-		<aside id="right_column" class="span3 column right_home">  
+		<aside id="right_column" class="span3 column right_home">
+			<?php
+				$tag = $this->getTag();
+				if($tag):
+			?>
+			<section id="new-products_block_right" class="block products_block column_box tag">
+				<?php foreach($tag as $v):?>
+					<a href="<?php app()->baseUrl;?>/tag/<?php echo $v->alias?>.html"><?php echo $v->name;?></a>
+				<?php endforeach;?>
+			</section>		
+			<?php endif;?>	
+
 			<?php
 				$product = $this->getProduct();
 				if($product):

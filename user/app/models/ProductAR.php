@@ -9,6 +9,7 @@ class ProductAR extends BaseAR
 	public $word;
 	public $cat_id;
 	public $cat1_id;
+	public $tag_id;
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
@@ -111,7 +112,9 @@ class ProductAR extends BaseAR
 			$criteria->addCondition('t.cat_id = :cat_id')->params[':cat_id'] = $this->cat_id;
 		if(strlen($this->cat1_id) > 0)
 			$criteria->addCondition('t.cat1_id = :cat1_id')->params[':cat1_id'] = $this->cat1_id;
-
+		if(strlen($this->tag_id) > 0){
+			$criteria->addCondition('FIND_IN_SET(:tag_id, t.tag_id) > 0')->params[':tag_id'] = $this->tag_id;
+		}
 		if(strlen($this->word) > 0)
 			$criteria->compare('name',$this->word,true);
 		$criteria->order = 'id DESC';
@@ -141,6 +144,8 @@ class ProductAR extends BaseAR
 		$criteria->addCondition('t.status = :status')->params[':status'] = 1;
 		if(strlen($this->id) > 0)
 			$criteria->addCondition('id > :id')->params[':id'] = $this->id;
+		if(strlen($this->cat_id) > 0)
+			$criteria->addCondition('t.cat_id = :cat_id')->params[':cat_id'] = $this->cat_id;
 		$criteria->order = 'id DESC';
 		$criteria->limit = $limit;
 		$arr1 = $this->findAll($criteria);
@@ -151,6 +156,8 @@ class ProductAR extends BaseAR
 		$criteria1->addCondition('t.status = :status')->params[':status'] = 1;
 		if(strlen($this->id) > 0)
 			$criteria1->addCondition('id < :id')->params[':id'] = $this->id;
+		if(strlen($this->cat_id) > 0)
+			$criteria->addCondition('t.cat_id = :cat_id')->params[':cat_id'] = $this->cat_id;
 		$criteria1->order = 'id DESC';
 		$criteria1->limit = $limit;
 		$arr2 = $this->findAll($criteria1);

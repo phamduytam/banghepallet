@@ -18,6 +18,12 @@ body#index .instant + #right_column {
 #mobilelink {
 	width: 178px;
 }
+.menu_new{
+    background: #3B4664;
+    height: 45px;
+    position: relative;
+    margin: 0 9px !important;
+}
 #countries_2 .countries_ul, #setCurrency .currencies_ul {
 	width: 179px;
 }

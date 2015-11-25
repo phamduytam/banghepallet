@@ -125,7 +125,7 @@ class AdvertiseAR extends BaseAR
 	public function getBanner()
 	{
 		$criteria = $this->getCriteriaListAdvertise();
-		return $this->findAll($criteria);
+		return $this->find($criteria);
 	}
 
 	public function getLogo()

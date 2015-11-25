@@ -1,12 +1,14 @@
 <?php
-class ProductAR extends BaseAR
+class TagAR extends BaseAR
 {
+	public $word;
+	public $tagList;
+	public $selected;
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
 	 * @return AdminAR the static model class
 	 */
-	public $word;
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
@@ -17,7 +19,7 @@ class ProductAR extends BaseAR
 	 */
 	public function tableName()
 	{
-		return 'product';
+		return 'tag';
 	}
 
 	/**
@@ -38,11 +40,8 @@ class ProductAR extends BaseAR
 			// Please remove those attributes that should not be searched.
 			array('user_id, password, name, permission, status', 'safe', 'on'=>'search'),
 			*/
-			array('alias, created', 'required'),
-			array('name', 'required', 'message' => 'Vui lòng nhập tên sản phẩm'),
-			array('content', 'required', 'message' => 'Vui lòng nhập nội dung'),
-			array('image', 'file', 'allowEmpty'=>true, 'types' => 'jpg, gif, png, jpeg', 'maxSize' => 2048*1000, 'wrongType' => 'Image không đúng định dạng ', 'tooLarge' => 'Image quá lớn'),
-			array('description, order, status, cat_id, cat1_id, tag', 'safe')
+			array('name, ', 'required', 'message' => 'Vui lòng nhập {attribute} '),
+			array('created, status, ordering', 'safe')
 		);
 	}
 
@@ -54,8 +53,7 @@ class ProductAR extends BaseAR
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'category'=>array(self::BELONGS_TO, 'Category1AR', 'cat_id'),
-			'category1'=>array(self::BELONGS_TO, 'Category1AR', 'cat1_id'),
+
 		);
 	}
 
@@ -65,17 +63,11 @@ class ProductAR extends BaseAR
 	public function attributeLabels()
 	{
 		return array(
-			'name'			=> 'Tên sản phẩm',
-			'alias'			=> 'Alias',
-			'description'	=> 'Mô tả',
-			'content'		=> 'Nội dung',
-			'image'			=> 'Hình ảnh',
-			'order'			=> 'Thứ tự',
+			'name'			=> 'Tiêu đề',
 			'status'		=> 'Tình trạng',
+			'alias'			=> 'Alias',
 			'created'		=> 'Ngày tạo',
-			'cat_id'		=> 'Danh mục cấp 1',
-			'cat1_id'		=> 'Danh mục cấp 2',
-			'tag'			=> 'Tags'
+			'ordering'		=> 'Thứ tự'
 		);
 	}
 
@@ -104,30 +96,36 @@ class ProductAR extends BaseAR
 		));
 	}
 
-	private function getCriteriaListProduct()
+	private function getCriteriaListTag()
 	{
 		$criteria = new CDbCriteria();
 		$criteria->select = '*';
 		//$criteria->addCondition('status = :status')->params[':status'] = 1;
-		if(strlen($this->word) > 0)
-			$criteria->compare('name',$this->word,true);
-		$criteria->with = array(
-			'category' => array(
-				'select' 	=> 'category.name',
-				'joinType'	=> 'LEFT JOIN'
-			),
-			'category1' => array(
-				'select' 	=> 'category1.name',
-				'joinType'	=> 'LEFT JOIN'
-			)
-		);
-		$criteria->order = 't.id DESC';
+		if(strlen($this->word) > 0){
+			$criteria->compare('name', $this->word, true);
+		}
+		if(strlen($this->tagList) > 0){
+			$list = explode(',', $this->tagList);
+			$criteria->addInCondition('id', $list, 'AND');
+		}
+		
+		if(strlen($this->selected) > 0){
+			$criteria->addCondition('selected = :selected')->params[':selected'] = 1;
+		}
+
+		$criteria->order = 'id DESC';
 		return $criteria;
 	}
 
-	public function searchListProduct($pageSize = 20, $maxPage = -1)
+	public function searchListTag($pageSize = 20, $maxPage = -1)
 	{
-		$criteria = $this->getCriteriaListProduct();
+		$criteria = $this->getCriteriaListTag();
 		return $this->searchList_Ex($criteria, $pageSize, $maxPage);
+	}
+
+	public function findAllListTag()
+	{
+		$criteria = $this->getCriteriaListTag();
+		return $this->findAll($criteria);
 	}
 }

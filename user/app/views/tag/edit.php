@@ -2,7 +2,11 @@
 $this->pageTitle = 'Product';
 ?>
 <div class="row">
-<div class="col-lg-12">
+<ol class="breadcrumb">
+	<li><i class="fa fa-star-o"></i> <a href='<?php echo url('/product')?>'>Product</a></li>
+	<li class="active"><i class="fa fa-edit"></i> Edit</li>
+</ol>
+<div class="col-lg-6">
 
 
 <?php echo CHtml::errorSummary($model, '<div class="alert alert-dismissable alert-warning"> Loi', '</div>'); ?>
@@ -15,24 +19,15 @@ $this->pageTitle = 'Product';
 	?>
 <?php
 	$form = $this->beginWidget('TbActiveForm', array(
-		'action'=>sslUrl('product/add'),
+		'action'=>sslUrl('product/edit/'.$model->id),
 		'id' => 'add-form',
 		'htmlOptions'=>array('enctype' => 'multipart/form-data')
 	));
 ?>
-<div class="form-group">
-			<?php echo $form->labelEx($model,'cat_id'); ?>
-			<?php echo $form->dropDownList($model,'cat_id',array('0'=>'Danh mục cấp 1') + CHtml::listData($category, 'id', 'name'), array('class' => 'form-control cat_id')); ?>
-</div>
-
-<div class="form-group cat1_id">
-			<?php echo $form->labelEx($model,'cat1_id'); ?>
-			<?php echo $form->dropDownList($model,'cat1_id',array('0'=>'Danh mục cấp 2') + CHtml::listData($category1, 'id', 'name'), array('class' => 'form-control')); ?>
-</div>
 
 <div class="form-group">
 	<?php echo $form->labelEx($model,'name'); ?>
-	<?php echo $form->textField($model,'name', array('class' => 'form-control', 'placeholder' => 'Vui lòng nhập tên sản phẩm')); ?>
+	<?php echo $form->textField($model,'name', array('class' => 'form-control')); ?>
 </div>
 
 <div class="form-group">
@@ -42,20 +37,11 @@ $this->pageTitle = 'Product';
 
 <div class="form-group">
 	<?php echo $form->labelEx($model,'image'); ?>
-	<?php echo $form->fileField($model,'image'); ?>
+	<?php echo $form->fileField($model,'image', array('value' => $model->image)); ?>
+	<?php echo CHtml::image(dirname(app()->baseUrl) . 'uploads/'.$model->image, 'image', array('width' => '50px', 'height' => '50px'))?>
+	<?php echo Chtml::hiddenField('hd_img', $model->image); ?>
 </div>
 
-<div class="form-group" style="overflow: hidden">
-	<?php echo $form->labelEx($model,'tag'); ?><br>
-	<?php if($tags):?>
-		<?php foreach ($tags as $value) {
-			echo '<span class="col-lg-2">
-				<input type="checkbox" name="tagList[]" value="'.$value->id.'">
-				 <label> &nbsp'.$value->name.'</label></span>';
-		}
-		?>
-<?php endif;?>
-</div>
 <div class="form-group">
 	<?php echo $form->labelEx($model,'content'); ?>
 	<?php echo $form->textArea($model,'content', array('class' => 'form-control')); ?>
@@ -70,15 +56,14 @@ $this->pageTitle = 'Product';
 	</script>
 </div>
 
-
 <div class="form-group">
 	<?php echo $form->labelEx($model,'status'); ?>
-	<?php echo $form->checkBox($model,'status', array('checked' => 'checked')); ?>
+	<?php echo $form->checkBox($model,'status', array('checked' => $model->status)); ?>
 </div>
 
 <div class="form-group">
 	<?php echo $form->labelEx($model,'order'); ?>
-	<?php echo $form->textField($model,'order', array('class' => 'form-control', 'placeholder' => 'Vui lòng nhập thứ tự')); ?>
+	<?php echo $form->textField($model,'order', array('class' => 'form-control')); ?>
 </div>
 
 <button type="submit" class="btn btn-default">Save</button>
@@ -90,18 +75,4 @@ $this->pageTitle = 'Product';
 
 </div>
 </div>
-<script type="text/javascript">
-	$(document).ready(function(){
-		var url = "<?php echo app()->baseUrl?>";
-		$('.cat_id').change(function(){
-			id = $(this).val();
-			$.ajax({
-				url: url + '/category1/ajaxSub2/' + id,
-				success: function(html) {
-					$('.cat1_id').html(html);
-				}
-			});
-		});
 
-	});
-</script>

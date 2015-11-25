@@ -37,3 +37,14 @@ $this->layout = 'standard';
 <?php endforeach;?>
 </ul>
 <?php endif;?>
+
+<?php if($ortherList):?>
+
+	<div class="headline"><h3>Bài viết khác</h3></div>
+	<ul class="fill-circle">
+		<?php foreach ($ortherList as $value):?>
+		<li><a href="<?php echo app()->baseUrl?>/chi-tiet/<?php echo $value->id?>/ <?php echo $value->alias;?>"><?php echo $value->name?></a></li>
+		<?php endforeach;?>
+	</ul>
+
+<?php endif;?>

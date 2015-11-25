@@ -2,7 +2,11 @@
 $this->pageTitle = 'Product';
 ?>
 <div class="row">
-<div class="col-lg-12">
+<ol class="breadcrumb">
+	<li><i class="fa fa-star-o"></i> <a href='<?php echo url('/product')?>'>Product</a></li>
+	<li class="active"><i class="fa fa-plus-square-o"></i> Add</li>
+</ol>
+<div class="col-lg-6">
 
 
 <?php echo CHtml::errorSummary($model, '<div class="alert alert-dismissable alert-warning"> Loi', '</div>'); ?>
@@ -20,15 +24,6 @@ $this->pageTitle = 'Product';
 		'htmlOptions'=>array('enctype' => 'multipart/form-data')
 	));
 ?>
-<div class="form-group">
-			<?php echo $form->labelEx($model,'cat_id'); ?>
-			<?php echo $form->dropDownList($model,'cat_id',array('0'=>'Danh mục cấp 1') + CHtml::listData($category, 'id', 'name'), array('class' => 'form-control cat_id')); ?>
-</div>
-
-<div class="form-group cat1_id">
-			<?php echo $form->labelEx($model,'cat1_id'); ?>
-			<?php echo $form->dropDownList($model,'cat1_id',array('0'=>'Danh mục cấp 2') + CHtml::listData($category1, 'id', 'name'), array('class' => 'form-control')); ?>
-</div>
 
 <div class="form-group">
 	<?php echo $form->labelEx($model,'name'); ?>
@@ -45,17 +40,6 @@ $this->pageTitle = 'Product';
 	<?php echo $form->fileField($model,'image'); ?>
 </div>
 
-<div class="form-group" style="overflow: hidden">
-	<?php echo $form->labelEx($model,'tag'); ?><br>
-	<?php if($tags):?>
-		<?php foreach ($tags as $value) {
-			echo '<span class="col-lg-2">
-				<input type="checkbox" name="tagList[]" value="'.$value->id.'">
-				 <label> &nbsp'.$value->name.'</label></span>';
-		}
-		?>
-<?php endif;?>
-</div>
 <div class="form-group">
 	<?php echo $form->labelEx($model,'content'); ?>
 	<?php echo $form->textArea($model,'content', array('class' => 'form-control')); ?>
@@ -90,18 +74,4 @@ $this->pageTitle = 'Product';
 
 </div>
 </div>
-<script type="text/javascript">
-	$(document).ready(function(){
-		var url = "<?php echo app()->baseUrl?>";
-		$('.cat_id').change(function(){
-			id = $(this).val();
-			$.ajax({
-				url: url + '/category1/ajaxSub2/' + id,
-				success: function(html) {
-					$('.cat1_id').html(html);
-				}
-			});
-		});
 
-	});
-</script>

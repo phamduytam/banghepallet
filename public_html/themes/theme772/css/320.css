@@ -1,6 +1,6 @@
 /*  #Mobile (Portrait) width of 320px 
 ================================================== */
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 460px) {
 /* ************************************************************************************************
 		 GENERAL STYLE
 		************************************************************************************************ */
@@ -169,14 +169,15 @@ footer .modules {
 	margin: 0;
 	height: 30px;
 	padding: 8px 0 7px 0;
-	border-right: 1px solid #656f85;
 }
 .mobile-link-top h4 .arrow_header_top_menu.arrow_header_top {
 	display: block;
 	position: static;
 	margin: 0px auto 0 auto;
 	font-size: 25px;
-	text-align: center;
+	text-align: left;
+	padding-right: 15px;
+    padding-top: 3px;
 }
 .mobile-link-top h4.active {
 	color: #b3c4d9;
@@ -187,7 +188,7 @@ body#index a.header_links_home, #sitemap a.header_links_sitemap, #contact a.head
 #mobilelink {
 	display: none;
 	list-style: none;
-	width: 140px;
+	width: 100%;
 	position: absolute;
 	top: 45px;
 	left: 0px;
@@ -195,6 +196,12 @@ body#index a.header_links_home, #sitemap a.header_links_sitemap, #contact a.head
 }
 #mobilelink a {
 	text-transform: capitalize;
+}
+.menu_new{
+    background: #3B4664;
+    height: 45px;
+    position: relative;
+    margin: 0 7px;
 }
 /* ************************************************************************************************
 				LANGUAGES CURRENCIES
@@ -810,7 +817,7 @@ p.payment_module + p {
 @media only screen and (max-width: 480px) {
 /*logo size */
 #header_logo {
-	width: 160px;
+	width: 110px;
 	top: 55px;
 	left:5px;
 }
@@ -867,6 +874,9 @@ table#cart_summary.multishipping-cart #cart_quantity_button {
 	text-align: right;
 	font-weight: bold;
 	padding-bottom: 10px;
-	margin-top: -34px;
+	margin-top: -20px;
 }
+
 }
+
+

@@ -28,6 +28,8 @@ class ProductController extends Controller
 			// POSTデータの取得
 			$data = request()->getPost('ProductAR');
 			$model->attributes = $data;
+			if(isset($_POST['tagList']))
+				$model->tag_id = implode(',', $_POST['tagList']);
 			$model->alias = convert($data['name']);
 			$model->created = date('Y-m-d H:i:s', time());
 
@@ -58,7 +60,12 @@ class ProductController extends Controller
 
 		// danh muc 2
 		$category1 = $model_cate->getSub2();		
-		$this->render('add', compact('model', 'category', 'category1'));
+
+		// tag list
+		$model_tag = new TagAR();
+		$tags = $model_tag->findAllListTag();
+
+		$this->render('add', compact('model', 'category', 'category1', 'tags'));
 	}
 
 	public function actionEdit($id)
@@ -72,11 +79,20 @@ class ProductController extends Controller
 		$model = $product->findByPk($id);
 		if(!$model)
 			return ;
+		$model_tag = new TagAR();
+		$tags = $model_tag->findAllListTag();
+
+		$tags_checked = explode(',', $model->tag_id);
+
 		if (app()->request->getPost('ProductAR'))
 		{
 			$data = request()->getPost('ProductAR');
 			$model->attributes = $data;
 			$model->alias = convert($data['name']);
+			if(isset($_POST['tagList']))
+				$model->tag_id = implode(',', $_POST['tagList']);
+			else
+				$model->tag_id = '';
 			$model->created = date('Y-m-d H:i:s', time());
 			$imageUploadFile = CUploadedFile::getInstance($model, 'image');
 			if($imageUploadFile == null){
@@ -98,7 +114,10 @@ class ProductController extends Controller
 				}
 
 				if($model->save())
+				{
 					user()->setFlash('messages', 'Edit successful!!');
+					$this->redirect(url('/product/edit/'.$id));
+				}
 			}
 		}
 
@@ -109,7 +128,7 @@ class ProductController extends Controller
 		// danh muc 2
 		$category1 = $model_cate->getSub2();		
 
-		$this->render('edit', compact('model', 'category', 'category1'));
+		$this->render('edit', compact('model', 'category', 'category1', 'tags', 'tags_checked'));
 	}
 	public function actionDelete($id)
 	{

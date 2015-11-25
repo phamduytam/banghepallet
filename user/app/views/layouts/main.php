@@ -134,29 +134,7 @@
 							<span class="number">0936 730 730</span>
 							<span class="text">Hotline: </span>
 						</div>
-					<section class="header-box blockpermanentlinks-header">
-						<ul id="header_links">
-							<li <?php echo $this->id == 'site' ? 'class="header_active"' : ''?>><a href="<?php echo app()->baseUrl;?>/">Trang chủ</a></li>
-							<li <?php echo $this->id == 'product' ? 'class="header_active"' : ''?>><a href="<?php echo url('san-pham.html')?>">Sản phẩm</a></li>
-							<!-- <li <?php echo $this->id == 'tintuc' ? 'class="header_active"' : ''?>><a href="<?php echo url('tin-tuc.html')?>">Tin tức</a></li>-->
-							<li <?php echo $this->id == 'khachhang' ? 'class="header_active"' : ''?>><a href="<?php echo url('khach-hang.html')?>">Khách hàng</a></li>
-							<li <?php echo $this->id == 'contact' ? 'class="header_active"' : ''?>><a href="<?php echo url('lien-he.html')?>">Liên hệ</a></li>
-						</ul>
-						<div class="mobile-link-top header-button">
-							<h4 class="icon_wrapp">
-								<span class="title-hed"></span><i
-									class="arrow_header_top_menu arrow_header_top icon-reorder"></i>
-							</h4>
-							<ul id="mobilelink" class="list_header">
-								<li <?php echo $this->id == 'site' ? 'class="header_active"' : ''?>><a href="<?php echo app()->baseUrl;?>/">Trang chủ</a></li>
-								<li <?php echo $this->id == 'product' ? 'class="header_active"' : ''?>><a href="<?php echo url('san-pham.html')?>">Sản phẩm</a></li>
-								<!-- <li <?php echo $this->id == 'tintuc' ? 'class="header_active"' : ''?>><a href="<?php echo url('tin-tuc.html')?>">Tin tức</a></li> -->
-								<li <?php echo $this->id == 'khachhang' ? 'class="header_active"' : ''?>><a href="<?php echo url('khach-hang.html')?>">Khách hàng</a></li>
-								<li <?php echo $this->id == 'contact' ? 'class="header_active"' : ''?>><a href="<?php echo url('lien-he.html')?>">Liên hệ</a></li>
-							</ul>
-						</div>
-					</section>
-					<div id="menu-wrap" class="clearfix desktop">
+					<!-- <div id="menu-wrap" class="clearfix desktop">
 						
 						
 						<div id="menu-trigger">
@@ -165,23 +143,51 @@
 						
 						<ul id="menu-custom">
 							
-							<?php echo $this->getMenu()?>
+							<?php //echo $this->getMenu()?>
 						</ul>
 					
-					</div>
+					</div> -->
+
+					
 				</div>
+				
+				<div class="menu_new">
+						<section class="container">
+							<ul id="header_links">
+								<li <?php echo $this->id == 'site' ? 'class="header_active"' : ''?>><a href="<?php echo app()->baseUrl;?>/">Trang chủ</a></li>
+								<li <?php echo $this->id == 'product' ? 'class="header_active"' : ''?>><a href="<?php echo url('san-pham.html')?>">Sản phẩm</a></li>
+								<!-- <li <?php echo $this->id == 'tintuc' ? 'class="header_active"' : ''?>><a href="<?php echo url('tin-tuc.html')?>">Tin tức</a></li>-->
+								<li <?php echo $this->id == 'khachhang' ? 'class="header_active"' : ''?>><a href="<?php echo url('khach-hang.html')?>">Khách hàng</a></li>
+								<li <?php echo $this->id == 'contact' ? 'class="header_active"' : ''?>><a href="<?php echo url('lien-he.html')?>">Liên hệ</a></li>
+							</ul>
+							<div class="mobile-link-top header-button">
+								<h4 class="">
+									<span class="title-hed"></span><i
+										class="arrow_header_top_menu arrow_header_top icon-reorder">&nbsp Menu</i>
+								</h4>
+								<ul id="mobilelink" class="list_header">
+									<li <?php echo $this->id == 'site' ? 'class="header_active"' : ''?>><a href="<?php echo app()->baseUrl;?>/">Trang chủ</a></li>
+									<li <?php echo $this->id == 'product' ? 'class="header_active"' : ''?>><a href="<?php echo url('san-pham.html')?>">Sản phẩm</a></li>
+									<!-- <li <?php echo $this->id == 'tintuc' ? 'class="header_active"' : ''?>><a href="<?php echo url('tin-tuc.html')?>">Tin tức</a></li> -->
+									<li <?php echo $this->id == 'khachhang' ? 'class="header_active"' : ''?>><a href="<?php echo url('khach-hang.html')?>">Khách hàng</a></li>
+									<li <?php echo $this->id == 'contact' ? 'class="header_active"' : ''?>><a href="<?php echo url('lien-he.html')?>">Liên hệ</a></li>
+								</ul>
+							</div>
+						</section>	
+					</div>
+				<!-- 
 				<?php
-					$banner = $this->getBanner();
-					if($banner && $this->id == 'site'):
+					//$banner = $this->getBanner();
+					//if($banner && $this->id == 'site'):
 				?>
 				<div id="minic_slider" class="theme-default">
 					<div id="slider" class="nivoSlider"
 						style="margin-bottom: 0; display: inline-block;">
-							<?php foreach($banner as $v):?>
+							<?php //foreach($banner as $v):?>
 							<img
-							src="<?php echo app()->baseUrl;?>/uploads/<?php echo $v->image?>"
+							src="<?php //echo app()->baseUrl;?>/uploads/<?php //echo $v->image?>"
 							class="slider_image" title="#htmlcaption_1" />
-							<?php endforeach;?>
+							<?php //endforeach;?>
 					</div>
 					
 					<script type="text/javascript">
@@ -205,11 +211,49 @@
 				        });
 			        </script>
 			    </div>
-			<?php endif;?>
+			<?php //endif;?>
+			-->
 					
 			</header>
+
 			<div id="columns" class="container ">
-				<?php echo $content;?>
+				<?php if($this->id == 'site'):?>
+				<div class="row">
+					<div class="span3 category_left">
+						<?php
+						$category = $this->getCategory();
+						if($category):
+						?>
+						<section>
+							
+							<h4>
+								Sản phẩm
+							</h4>
+							<ul class="toggle_content list-footer tree dhtml">
+								<?php
+								foreach ($category as $v):
+							?>
+								<li><a href="<?php echo app()->baseUrl;?>/san-pham/<?php echo $v->alias?>.html" title="<?php echo $v->name?>"><?php echo $v->name?></a>
+								</li>
+							<?php endforeach;?>
+							</ul>
+						</section>
+					<?php endif;?>
+					</div>
+					<div class="span9">
+						<?php
+							$banner = $this->getBanner();
+							if($banner):
+						?>
+						<img
+							src="<?php echo app()->baseUrl;?>/uploads/<?php echo $banner->image?>"/>
+						<?php endif;?>
+						<?php echo $content;?>
+					</div>
+				</div>
+			<?php else:?>
+				<div class="span12"><?php echo $content;?></div>
+			<?php endif?>
 			</div>
 			<div class="footer-bg-mob">
 				<footer class="container ">
@@ -268,7 +312,7 @@
 								<li><i class="icon-envelope"></i>Email <a href="mailto:<?php echo html_entity_decode(strip_tags($contact['email']->content), ENT_QUOTES, 'UTF-8')?>"><?php echo html_entity_decode(strip_tags($contact['email']->content), ENT_QUOTES, 'UTF-8')?></a>
 								</li>
 							</ul>
-							<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.038542333803!2d106.64818889999998!3d10.8846731!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174d61ec782b539%3A0x90e599f43d6913cf!2zNTExIEzDqiBWxINuIEtoxrDGoW5nLCBUaOG7m2kgQW4sIFF14bqtbiAxMiwgSOG7kyBDaMOtIE1pbmgsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1436783006382" width="100%" height="220" frameborder="0" style="border:0" allowfullscreen></iframe>
+							<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.0211556025733!2d106.63949131438561!3d10.88599526013935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174d61b45f12d5d%3A0x2238e82ff520b248!2zQsOgbiBnaOG6vyBQYWxsZXQ!5e0!3m2!1sen!2s!4v1448280211519" width="100%" height="220" frameborder="0" style="border:0" allowfullscreen></iframe>
 						</section>
 						<?php endif;?>
 						

@@ -78,6 +78,10 @@
 				data-hc="#6CC66C" data-size="18" data-loop="true"></i> <span
 				class="title">Khách hàng</span> <span class="fa arrow"></span> </a>
 			</li>
+		<li <?php echo $this->id == 'tag' ? 'class="active"' : ''?>><a href="<?php echo app()->baseUrl;?>/tag"> <i class="livicon" data-name="user" data-c="#F89A14"
+				data-hc="#F89A14" data-size="18" data-loop="true"></i> <span
+				class="title">Tags</span> <span class="fa arrow"></span> </a>
+			</li>	
 		<li <?php echo $this->id == 'advertise' ? 'class="active"' : ''?>><a href="<?php echo app()->baseUrl;?>/advertise"> <i class="livicon" data-name="image" data-c="#418BCA"
 				data-hc="#418BCA" data-size="18" data-loop="true"></i> <span
 				class="title">Banner</span> <span class="fa arrow"></span> </a>

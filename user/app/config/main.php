@@ -61,6 +61,7 @@ return array(
 				'dich-vu/detail/<id:\w+>/<alias:[\s\S]+>' => 'dichvu/detail',
 				'san-pham/<alias:[\s\S]+>/<alias1:[\s\S]+>' => 'product/category',
 				'san-pham/<alias:[\s\S]+>' => 'product/category',
+				'tag/<alias:[\s\S]+>' => 'tag/index',
 				'^([^/\.]+).html' => 'static/index',
 				'api/<controller:\w+>/<action:\w+>'=>'api_<controller>/<action>',
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',

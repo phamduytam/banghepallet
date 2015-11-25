@@ -214,4 +214,13 @@ class Controller extends CController
 		//$html.= '</li>';
 		return $html;
 	}
+
+	public function getTag()
+	{
+		// tag detail right
+		$model_tag = new TagAR();
+		$model_tag->selected = true;
+		$tag_right = $model_tag->findAllListTag();
+		return $tag_right;
+	}
 }
